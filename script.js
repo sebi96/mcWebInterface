@@ -36,7 +36,7 @@ if(uri == "/" + SECURITYTOKKEN + "/start"){
 
 	var spawn = require('child_process').spawn,
 	
-	ls    = spawn('./new', ['start']);
+	ls    = spawn('./mcscript.sh', ['start']);
 
 	/*ls.stdout.on('data', function (data) {
 	  console.log('stdout: ' + data);
@@ -60,7 +60,7 @@ else if(uri == "/" + SECURITYTOKKEN + "/stop"){
 
 	var spawn = require('child_process').spawn,
 	
-	ls    = spawn('./new', ['stop']);
+	ls    = spawn('./mcscript.sh', ['stop']);
 
 	/*ls.stdout.on('data', function (data) {
 	  console.log('stdout: ' + data);
@@ -84,7 +84,7 @@ else if(uri == "/" + SECURITYTOKKEN + "/restart"){
 
 	var spawn = require('child_process').spawn,
 
-	ls    = spawn('./new', ['restart']);
+	ls    = spawn('./mcscript.sh', ['restart']);
 
 	/*ls.stdout.on('data', function (data) {
 	  console.log('stdout: ' + data);
