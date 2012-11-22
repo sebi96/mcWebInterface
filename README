@@ -13,9 +13,10 @@ Feel free to use on your own server, wheatver a private or a comercial use. Even
 1. Download ... script. Its used as interface between this webinterface and the minecraft server (I didn't wanted to develop my own script).
 2. Configure the script as in this readme.
 3. Install Screen and Node.js if not already installed.
-4. Change in the script.js the settings for Security-Token (should be at least a 128bit strong random key) and port (the port you would like).
-5. If you prefer a german webinterface, rename the fileGER.html to file.html (and delete the old file.html).
-6. start the script with >>node script.js<< (maybe with screen)
+4. Change in the script.js the settings for Security-Token (should be at least a 128bit strong random key), ip-adress and port (the port you would like).
+5. Change the placeholders in the top of >>file.html<<
+6. If you prefer a german webinterface, rename the fileGER.html to file.html (and delete the old file.html).
+7. start the script with >>node script.js<< (maybe with screen)
 
 ### How to use
 1. Open the interface over {ip-adress}:{port}/{security-token}.
