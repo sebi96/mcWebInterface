@@ -121,4 +121,4 @@ else if(uri == "/" + SECURITYTOKKEN || uri == "/" + SECURITYTOKKEN + "/"){
 
 
 }).listen(port, ip');
-console.log('Server running at PORT: 8000/');
+console.log('Server running at PORT:' + port);
