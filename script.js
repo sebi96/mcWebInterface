@@ -35,16 +35,16 @@ if(uri == "/" + SECURITYTOKKEN + "/start"){
 	//////////////////////////////////////////////
 
 	var spawn = require('child_process').spawn,
-		//ls    = spawn('wget', ['start']);
+	
 	ls    = spawn('./new', ['start']);
 
-	ls.stdout.on('data', function (data) {
+	/*ls.stdout.on('data', function (data) {
 	  console.log('stdout: ' + data);
 	});
 
 	ls.stderr.on('data', function (data) {
 	  console.log('stderr: ' + data);
-	});
+	});*/
 	ls.on('exit', function (code) {
 	  console.log('child process exited with code ' + code);
 	});
@@ -59,16 +59,16 @@ else if(uri == "/" + SECURITYTOKKEN + "/stop"){
 	//////////////////////////////////////////////
 
 	var spawn = require('child_process').spawn,
-		//ls    = spawn('wget', ['start']);
+	
 	ls    = spawn('./new', ['stop']);
 
-	ls.stdout.on('data', function (data) {
+	/*ls.stdout.on('data', function (data) {
 	  console.log('stdout: ' + data);
 	});
 
 	ls.stderr.on('data', function (data) {
 	  console.log('stderr: ' + data);
-	});
+	});*/
 	ls.on('exit', function (code) {
 	  console.log('child process exited with code ' + code);
 	});
@@ -83,16 +83,16 @@ else if(uri == "/" + SECURITYTOKKEN + "/restart"){
 	//////////////////////////////////////////////
 
 	var spawn = require('child_process').spawn,
-		//ls    = spawn('wget', ['start']);
+
 	ls    = spawn('./new', ['restart']);
 
-	ls.stdout.on('data', function (data) {
+	/*ls.stdout.on('data', function (data) {
 	  console.log('stdout: ' + data);
 	});
 
 	ls.stderr.on('data', function (data) {
 	  console.log('stderr: ' + data);
-	});
+	});*/
 	ls.on('exit', function (code) {
 	  console.log('child process exited with code ' + code);
 	});
