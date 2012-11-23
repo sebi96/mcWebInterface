@@ -5,7 +5,7 @@ REPLACE the FOLLOWING VARIABLES:
 
 var SECURITYTOKKEN = "aaa"; //at least 128bit strong key
 var port = 8000;
-var ip = '127.0.0.1';
+//var ip = '127.0.0.1';
 
 
 /////////////////////////////////////////////////////////////////
@@ -120,5 +120,5 @@ else if(uri == "/" + SECURITYTOKKEN || uri == "/" + SECURITYTOKKEN + "/"){
 }
 
 
-}).listen(port, ip);
-console.log('Server running at PORT:' + port);
+}).listen(port);
+console.log('Server running at PORT ' + port);
