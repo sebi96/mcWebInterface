@@ -25,6 +25,7 @@ REPLACE the FOLLOWING PLACEHOLDERS:
       <p>Please wait after each action a short time. Some actions need upto 60sec until they are successfull!</p>
       <p>For questions and problems, contact <b>{admin}</b>!</p>
 
+      <input type="button" id="statusBTN" value="STATUS">
       <input type="button" id="startBTN" value="START" >
       <input type="button" id="stopBTN" value="STOP" >
       <input type="button" id="restartBTN" value="RESTART" >
@@ -74,6 +75,21 @@ REPLACE the FOLLOWING PLACEHOLDERS:
             });
           });
 
+          $("#statusBTN").click(function() {
+            $.ajax({
+              url: "http://{url}/{securitytoken}/status",
+            }).done(function ( data ) {
+
+              if(data == ""){
+                $("#pTAG").html("<h2 style='color:red'>" + uhrzeuit + ": Server is on!</h2>");
+              }
+              else if (data == ""){
+                $("#pTAG").html("<h2 style='color:red'>" + uhrzeuit + ": Server is off!</h2>");                
+              }
+
+
+            });
+          });
         });
     </script>
 
