@@ -120,5 +120,5 @@ else if(uri == "/" + SECURITYTOKKEN || uri == "/" + SECURITYTOKKEN + "/"){
 }
 
 
-}).listen(port, ip');
+}).listen(port, ip);
 console.log('Server running at PORT:' + port);
