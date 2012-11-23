@@ -5,7 +5,7 @@ REPLACE the FOLLOWING VARIABLES:
 
 var SECURITYTOKKEN = "aaa"; //at least 128bit strong key
 var port = 8000;
-//var ip = '127.0.0.1';
+
 
 
 /////////////////////////////////////////////////////////////////
