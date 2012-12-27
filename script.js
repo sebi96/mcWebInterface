@@ -102,6 +102,34 @@ else if(uri == "/" + SECURITYTOKKEN + "/restart"){
 	///////////////////////////////////////////////
 }
 
+else if(uri == "/" + SECURITYTOKKEN + "/status"){
+	sys.puts ("ERFOLG");
+	//////////////////////////////////////////////
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+
+
+	var spawn = require('child_process').spawn,
+
+	ls    = spawn('./mcscript.sh', ['status']);
+
+	ls.stdout.on('data', function (data) {
+	  rs.write(data);
+	});
+
+
+
+	/*ls.stderr.on('data', function (data) {
+	  console.log('stderr: ' + data);
+	});*/
+	ls.on('exit', function (code) {
+	  console.log('child process exited with code ' + code);
+	});
+
+
+    res.end("", 'utf-8');
+	///////////////////////////////////////////////
+}
+
 else if(uri == "/" + SECURITYTOKKEN || uri == "/" + SECURITYTOKKEN + "/"){
 
 
