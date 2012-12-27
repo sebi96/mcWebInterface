@@ -60,8 +60,8 @@ app.get('/' + SECURITYTOKKEN + '/?', function(req, res){
             res.end();
         }
         else {
-            res.send(content);
-        }
+          res.writeHead(200, { 'Content-Type': 'text/html' });
+          res.end(content, 'utf-8');        }
     }); 
 });
 
