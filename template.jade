@@ -10,12 +10,13 @@ html
 
 
 	body
-		h1 Webinterface: #{title}
-		p <b>Welcome to the webinterface of &raquo;#{title}&laquo;</b>
-		p Pleas keep this link private, don't share it with others or in the internet. Should you have the feeling, that someone else is knowing this link, contact #{admin}. He can gernate manually a new security token.
-		p Please wait after each action a short time. Some actions need upto 60sec until they are successfull!
-		p For questions and problems, contact <b>#{admin}</b>!
+		.container
+			h1 Webinterface: #{title}
+			p <b>Welcome to the webinterface of &raquo;#{title}&laquo;</b>
+			p Pleas keep this link private, don't share it with others or in the internet. Should you have the feeling, that someone else is knowing this link, contact #{admin}. He can gernate manually a new security token.
+			p Please wait after each action a short time. Some actions need upto 60sec until they are successfull!
+			p For questions and problems, contact <b>#{admin}</b>!
 
-		input.btn(type="button", id="startBTN", value="START")
-		input.btn(type="button", id="stopBTN", value="STOP")
-		input.btn(type="button", id="restartBTN", value="RESTART")
+			input.btn(type="button", id="startBTN", value="START")
+			input.btn(type="button", id="stopBTN", value="STOP")
+			input.btn(type="button", id="restartBTN", value="RESTART")
