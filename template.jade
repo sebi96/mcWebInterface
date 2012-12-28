@@ -2,22 +2,21 @@
 html
 
 	head
-		title #{title}
+		title Webinterface: #{title}
 		script(src='http://code.jquery.com/jquery-latest.js')
-		//script(src='client.js')
-	
+		script(src='client.js')
+		link(href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css", rel="stylesheet")
+		script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js")
+
+
 	body
+		.container
+			h1 Webinterface: #{title}
+			p <b>Welcome to the webinterface of &raquo;#{title}&laquo;</b>
+			p Pleas keep this link private, don't share it with others or in the internet. Should you have the feeling, that someone else is knowing this link, contact #{admin}. He can gernate manually a new security token.
+			p Please wait after each action a short time. Some actions need upto 60sec until they are successfull!
+			p For questions and problems, contact <b>#{admin}</b>!
 
-	//
-		h1 Webinterface: #{title}
-
-		p
-			b Welcome to the webinterface of &raquo;#{title}&laquo;
-		p Pleas keep this link private, don't share it with others or in the internet. Should you have the feeling, that someone else is knowing this link, contact #{admin}. He can gernate manually a new security token.
-		p Please wait after each action a short time. Some actions need upto 60sec until they are successfull!
-		p For questions and problems, contact <b>#{admin}</b>!
-
-		input(type="button" id="startBTN" value="START")
-		input(type="button" id="stopBTN" value="STOP")
-		input(type="button" id="restartBTN" value="RESTART")
-
+			input.btn(type="button", id="startBTN", value="START")
+			input.btn(type="button", id="stopBTN", value="STOP")
+			input.btn(type="button", id="restartBTN", value="RESTART")
