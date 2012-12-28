@@ -25,6 +25,8 @@ app.configure(function(){
   app.set('views', __dirname);
   app.set('view engine', 'jade');
   app.use(express.favicon());
+  app.use(express.logger('dev'));
+  app.use(app.router);
   app.use(express.bodyParser());
   app.use(express.methodOverride());
 });
@@ -71,13 +73,16 @@ app.get('/' + SECURITYTOKKEN + '/?', function(req, res){
 
 
 app.get('/' + SECURITYTOKKEN + '/d?', function(req, res){
-     /*res.render("template", {
-      title: "TITLE",
-      admin: "admin"  
-     });*/
-  res.render ("template")
+    res.render("template", {
+      title: title,
+      admin: admin
+    });
 
 });
+
+/*app.get('/' + SECURITYTOKKEN + '/client.js', function(req, res, next{
+  
+});*/
 
 
 
