@@ -3,7 +3,7 @@
 var SECURITYTOKKEN = "aaa"; //at least 128bit strong key
 var port = 8000;
 var title = "Servertitle";
-var url = "IP:Port"; // eg 127.0.0.1:8000
+var url = "127.0.0.1:8000"; // eg 127.0.0.1:8000
 var admin = "admin" // Name of the server admin
 
 /** END SETTINGS **/
@@ -29,6 +29,7 @@ app.configure(function(){
   app.use(app.router);
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.static(path.join(__dirname)));
 });
 
 
@@ -80,9 +81,18 @@ app.get('/' + SECURITYTOKKEN + '/d?', function(req, res){
 
 });
 
-/*app.get('/' + SECURITYTOKKEN + '/client.js', function(req, res, next{
-  
-});*/
+app.get('/' + SECURITYTOKKEN + '/client.js', function(req, res){
+  fs.readFile('./client.js', function(error, content) {
+        if (error) {
+            res.writeHead(500);
+            res.end();
+        }
+        else {
+            res.writeHead(200, { 'Content-Type': 'application/x-javascript' });
+            res.end(content, 'utf-8');
+        }
+    }); 
+});
 
 
 
