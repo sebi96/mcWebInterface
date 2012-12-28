@@ -60,7 +60,7 @@ app.get('/' + SECURITYTOKKEN + '/restart/?', function(req, res){
 });
 
 
-app.get('/' + SECURITYTOKKEN + '/?', function(req, res){
+/*app.get('/' + SECURITYTOKKEN + '/?', function(req, res){
   fs.readFile('./file.html', function(error, content) {
     if (error) {
         res.writeHead(500);
@@ -70,10 +70,10 @@ app.get('/' + SECURITYTOKKEN + '/?', function(req, res){
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.end(content, 'utf-8');        }
   }); 
-});
+});*/
 
 
-app.get('/' + SECURITYTOKKEN + '/d?', function(req, res){
+app.get('/' + SECURITYTOKKEN + '/?', function(req, res){
     res.render("template", {
       title: title,
       admin: admin
