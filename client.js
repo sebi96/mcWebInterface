@@ -12,7 +12,7 @@ $(document).ready(function(){
     $('input').attr('disabled', 'disabled');
 
     $.ajax({
-      url: "http://{url}/{securitytoken}/start",
+      url: "./start",
     }).done(function ( data ) {
       $("#pTAG").html("<h2 style='color:red'>" + uhrzeuit + ": &raquo;START&laquo; done! Please wait!</h2>");
     });
@@ -22,7 +22,7 @@ $(document).ready(function(){
     $('input').attr('disabled', 'disabled');
 
     $.ajax({
-      url: "http://{url}/{securitytoken}/stop",
+      url: "./stop",
     }).done(function ( data ) {
       $("#pTAG").html("<h2 style='color:red'>" + uhrzeuit + ": &raquo;STOP&laquo; done! Please wait!</h2>");
     });
@@ -32,7 +32,7 @@ $(document).ready(function(){
     $('input').attr('disabled', 'disabled');
 
     $.ajax({
-      url: "http://{url}/{securitytoken}/restart",
+      url: "./restart",
     }).done(function ( data ) {
       $("#pTAG").html("<h2 style='color:red'>" + uhrzeuit + ": &raquo;RESTART&laquo; done! Please wait!</h2>");
     });
@@ -40,7 +40,7 @@ $(document).ready(function(){
 
   $("#statusBTN").click(function() {
     $.ajax({
-      url: "http://{url}/{securitytoken}/status",
+      url: "./status",
     }).done(function ( data ) {
 
       if(data == ""){
