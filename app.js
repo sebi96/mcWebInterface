@@ -34,8 +34,8 @@ app.configure(function(){
 
 
 
-app.get('/', function(req, res){
-	res.send
+app.get('/?', function(req, res){
+	res.send(403, "Sorry Guy! This is a private part!");
 });
 
 
