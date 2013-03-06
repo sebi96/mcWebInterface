@@ -185,9 +185,9 @@ case $1 in
   status)
     if pgrep -u $USERNAME -f $SERVICE  devnull
     then
-      echo $SERVICE is running.
+      echo true
     else
-      echo $SERVICE is not running.
+      echo false
     fi
     ;;
   command)

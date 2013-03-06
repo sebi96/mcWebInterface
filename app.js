@@ -66,6 +66,20 @@ app.get('/' + SECURITYTOKKEN + '/restart/?', function(req, res){
 });
 
 
+app.get('/' + SECURITYTOKKEN + '/status/?', function(req, res){
+	var spawn = require('child_process').spawn,
+	ls = spawn('./mcscript.sh', ['status']);
+	ls.on('exit', function (code) {
+		if(code == "true"){
+			res.send("true");
+		}
+		else{
+			res.send("false");
+		}
+	});
+});
+
+
 app.get('/' + SECURITYTOKKEN + '/?', function(req, res){
 		res.render("template", {
 			title: title,
