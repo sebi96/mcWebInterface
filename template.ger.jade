@@ -1,0 +1,25 @@
+!!! 5
+html
+
+	head
+		title Webinterface: #{title}
+		script(src='http://code.jquery.com/jquery-latest.js')
+		script(src='client.js')
+		link(href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css", rel="stylesheet")
+		script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js")
+
+
+	body
+		.container
+			h1 Webinterface: #{title}
+			p <b>Willkommen auf der Serververwaltung des Servers &raquo;#{title}&laquo;</b>
+			p Bitte beachte, diesen Link geheim zuhalten, nich an Fremde zugeben oder irgendwo im Internet zuposten. Solltest du das Gefühl haben, jemand anderes hat diesen Link, kontaktiere <b>#{admin}</b>, um einen neuen Security-Token zugenerieren lassen.
+			p Bitte warte nach jeder Aktion eine Zeitlang ab, jenach Aktion kann es bis zu 60sec dauern, bis sie erfolgreich ausgeführt wurde!
+			p Bei Problemen unmittelbar <b>#{admin}</b> anschreiben!
+
+			input.btn(type="button", id="startBTN", value="STARTEN")
+			input.btn(type="button", id="stopBTN", value="STOPPEN")
+			input.btn(type="button", id="restartBTN", value="NEUSTART")
+			input.btn(type="button", id="statusBTN", value="STATUS")
+
+			p#pTAG

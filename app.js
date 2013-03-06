@@ -5,6 +5,7 @@ var port = 8000;
 var title = "Servertitle";
 var url = "127.0.0.1:8000"; // eg 127.0.0.1:8000
 var admin = "admin" // Name of the server admin
+var lang = "eng"; // Language, eng or ger only
 
 /** END SETTINGS **/
 
@@ -81,10 +82,19 @@ app.get('/' + SECURITYTOKKEN + '/status/?', function(req, res){
 
 
 app.get('/' + SECURITYTOKKEN + '/?', function(req, res){
+
+	if(lang == "eng"){
 		res.render("template", {
 			title: title,
 			admin: admin
+		});	
+	}
+	else{
+		res.render("template.ger.jade", {
+			title: title,
+			admin: admin
 		});
+	}
 
 });
 
