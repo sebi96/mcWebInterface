@@ -83,20 +83,29 @@ app.get('/' + SECURITYTOKKEN + '/status/?', function(req, res){
 
 app.get('/' + SECURITYTOKKEN + '/?', function(req, res){
 
-	if(lang == "eng"){
-		res.render("template", {
-			title: title,
-			admin: admin
-		});	
+	if(req.originalUrl == '/' + SECURITYTOKKEN ){
+		res.redirect('/' + SECURITYTOKKEN + '/');
 	}
+
 	else{
-		res.render("template.ger.jade", {
-			title: title,
-			admin: admin
-		});
+
+		if(lang == "eng"){
+			res.render("template", {
+				title: title,
+				admin: admin
+			});	
+		}
+		else{
+			res.render("template.ger.jade", {
+				title: title,
+				admin: admin
+			});
+		}
+
 	}
 
 });
+
 
 app.get('/' + SECURITYTOKKEN + '/client.js', function(req, res){
 	fs.readFile('./client.js', function(error, content) {
