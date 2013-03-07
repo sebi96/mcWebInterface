@@ -36,7 +36,7 @@ app.configure(function(){
 
 
 app.get('/?', function(req, res){
-	res.send(403, "Sorry Guy! This is a private part!");
+	res.send(403, "<h1>Sorry Guy! This is a private part!</h1>");
 });
 
 
