@@ -9,50 +9,50 @@ $(document).ready(function(){
 
 
 	$('input').click(function(){
-	$('input').attr('disabled', 'disabled');
+		$('input').attr('disabled', 'disabled');
 	});
+
 
 	$("#startBTN").click(function() {
+		$.ajax({
+			url: "./start",
+		}).done(function ( data ) {
+			$("#pTAG").html("<h2 style='color:red'>" + timestamp + ": &raquo;START&laquo; done! Please wait!</h2>");
+		});
+	});
 
-	$.ajax({
-		url: "./start",
-	}).done(function ( data ) {
-		$("#pTAG").html("<h2 style='color:red'>" + timestamp + ": &raquo;START&laquo; done! Please wait!</h2>");
-	});
-	});
 
 	$("#stopBTN").click(function() {
+		$.ajax({
+			url: "./stop",
+		}).done(function ( data ) {
+			$("#pTAG").html("<h2 style='color:red'>" + timestamp + ": &raquo;STOP&laquo; done! Please wait!</h2>");
+		});
+	});
 
-	$.ajax({
-		url: "./stop",
-	}).done(function ( data ) {
-		$("#pTAG").html("<h2 style='color:red'>" + timestamp + ": &raquo;STOP&laquo; done! Please wait!</h2>");
-	});
-	});
 
 	$("#restartBTN").click(function() {
-
-	$.ajax({
-		url: "./restart",
-	}).done(function ( data ) {
-		$("#pTAG").html("<h2 style='color:red'>" + timestamp + ": &raquo;RESTART&laquo; done! Please wait!</h2>");
+		$.ajax({
+			url: "./restart",
+		}).done(function ( data ) {
+			$("#pTAG").html("<h2 style='color:red'>" + timestamp + ": &raquo;RESTART&laquo; done! Please wait!</h2>");
+		});
 	});
-	});
+	
 
 	$("#statusBTN").click(function() {
+		$.ajax({
+			url: "./status",
+		}).done(function ( data ) {
+			console.log(data);
+			if(data == "true"){
+			$("#pTAG").html("<h2 style='color:red'>" + timestamp + ": Server is on!</h2>");
+			}
+			else{
+			console.log("gotacha");
+			$("#pTAG").html("<h2 style='color:red'>" + timestamp + ": Server is off!</h2>");                
+			}
 
-	$.ajax({
-		url: "./status",
-	}).done(function ( data ) {
-		console.log(data);
-		if(data == "true"){
-		$("#pTAG").html("<h2 style='color:red'>" + timestamp + ": Server is on!</h2>");
-		}
-		else{
-		console.log("gotacha");
-		$("#pTAG").html("<h2 style='color:red'>" + timestamp + ": Server is off!</h2>");                
-		}
-
-	});
+		});
 	});
 });
