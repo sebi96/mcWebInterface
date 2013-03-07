@@ -1,11 +1,11 @@
 $(document).ready(function(){
 
-  var uhr = new Date();
-  var minuten = uhr.getMinutes();
-  var stunden = uhr.getHours();
-  var sekunden = uhr.getSeconds();
+  var time = new Date();
+  var minutes = time.getMinutes();
+  var hours = time.getHours();
+  var seconds = time.getSeconds();
 
-  var timestamp = stunden+':'+minuten+':'+sekunden;
+  var timestamp = hours+':'+minutes+':'+seconds;
 
 
   $("#startBTN").click(function() {
