@@ -8,8 +8,11 @@ $(document).ready(function(){
 	var timestamp = hours+':'+minutes+':'+seconds;
 
 
-	$("#startBTN").click(function() {
+	$('input').click(function(){
 	$('input').attr('disabled', 'disabled');
+	});
+
+	$("#startBTN").click(function() {
 
 	$.ajax({
 		url: "./start",
@@ -19,7 +22,6 @@ $(document).ready(function(){
 	});
 
 	$("#stopBTN").click(function() {
-	$('input').attr('disabled', 'disabled');
 
 	$.ajax({
 		url: "./stop",
@@ -29,7 +31,6 @@ $(document).ready(function(){
 	});
 
 	$("#restartBTN").click(function() {
-	$('input').attr('disabled', 'disabled');
 
 	$.ajax({
 		url: "./restart",
@@ -39,7 +40,6 @@ $(document).ready(function(){
 	});
 
 	$("#statusBTN").click(function() {
-	$('input').attr('disabled', 'disabled');
 
 	$.ajax({
 		url: "./status",
