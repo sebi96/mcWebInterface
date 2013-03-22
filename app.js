@@ -95,12 +95,20 @@ app.get('/' + SECURITYTOKKEN + '/?', function(req, res){
 				admin: admin
 			});	
 		}
-		else{
+		else if(lang == "ger"){
 			res.render("template.ger.jade", {
 				title: title,
 				admin: admin
 			});
 		}
+
+		else{
+			res.render("template", {
+				title: title,
+				admin: admin
+			});	
+		}
+
 
 	}
 
