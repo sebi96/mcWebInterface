@@ -81,6 +81,15 @@ app.get('/' + SECURITYTOKKEN + '/status/?', function(req, res){
 });
 
 
+app.get('/' + SECURITYTOKKEN + '/backup/?', function(req, res){
+	var spawn = require('child_process').spawn,
+	ls    = spawn('./mcscript.sh', ['backup']);
+	ls.on('exit', function (code) {
+		console.log('child process exited with code ' + code);
+	});
+});
+
+
 app.get('/' + SECURITYTOKKEN + '/?', function(req, res){
 
 	if(req.originalUrl == '/' + SECURITYTOKKEN ){

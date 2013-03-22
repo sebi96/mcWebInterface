@@ -39,6 +39,15 @@ $(document).ready(function(){
 		});
 	});
 	
+	
+	$("#backupBTN").click(function() {
+		$.ajax({
+			url: "./backup",
+		}).done(function ( data ) {
+			$("#pTAG").html("<h2 style='color:red'>" + timestamp + ": &raquo;BACKUP&laquo; done! Please wait! NEED realy some time....</h2>");
+		});
+	});
+
 
 	$("#statusBTN").click(function() {
 		$.ajax({
